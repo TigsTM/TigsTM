@@ -3,7 +3,7 @@ name: Generate Datas
 on:
   schedule:
     
-cron: "0 /12 * *" # a cada 12 horas certinho
+- cron: "0 /12 * *" # a cada 12 horas certinho
 workflow_dispatch:
 
 jobs:
@@ -12,19 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-name: Checkout repo
+- name: Checkout repo
       uses: actions/checkout@v4
 
       
-name: Generate Snake Animation
+- name: Generate Snake Animation
       uses: Platane/snk@v3 # use versão mais recente
       id: snake-gif
       with:
-        github_user_name: TigsTM
+        github_user_name: Endriw-Ventura
         outputs: dist/github-contribution-grid-snake.svg
 
       
-name: Deploy snake to GitHub Pages
+- name: Deploy snake to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4 # use versão atualizada
       with:
         target_branch: output
