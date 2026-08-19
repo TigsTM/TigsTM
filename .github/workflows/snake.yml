@@ -17,7 +17,7 @@ jobs:
         uses: Platane/snk@v3 # use versão mais recente
         id: snake-gif
         with:
-          github_user_name: Endriw-Ventura
+          github_user_name: TigsTM
           outputs: dist/github-contribution-grid-snake.svg
 
       - name: Deploy snake to GitHub Pages
