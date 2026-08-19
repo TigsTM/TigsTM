@@ -2,28 +2,32 @@ name: Generate Datas
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # a cada 12 horas certinho
-  workflow_dispatch:
+    
+cron: "0 /12 * *" # a cada 12 horas certinho
+workflow_dispatch:
 
 jobs:
   build:
     name: Jobs to update datas
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      
+name: Checkout repo
+      uses: actions/checkout@v4
 
-      - name: Generate Snake Animation
-        uses: Platane/snk@v3 # use versão mais recente
-        id: snake-gif
-        with:
-          github_user_name: TigsTM
-          outputs: dist/github-contribution-grid-snake.svg
+      
+name: Generate Snake Animation
+      uses: Platane/snk@v3 # use versão mais recente
+      id: snake-gif
+      with:
+        github_user_name: TigsTM
+        outputs: dist/github-contribution-grid-snake.svg
 
-      - name: Deploy snake to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4 # use versão atualizada
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+name: Deploy snake to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v4 # use versão atualizada
+      with:
+        target_branch: output
+        build_dir: dist
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
